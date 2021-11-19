@@ -7,7 +7,10 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  tform: ^1.0.2
+  tform: 
+    git:
+      url: git@github.com:canyonwan/xfvoice_nullsafety.git
+      ref: master
 ```
 
 ## Example
