@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -110,11 +108,11 @@ class _TFormFieldState extends State<TFormField> {
                     isMultipleSelector: row!.type == TFormRowTypeMultipleSelector,
                   ),
                 ),
-              ) as FutureOr<String>);
+              ));
               break;
             case TFormRowTypeCustomSelector:
               if (row!.onTap == null) return;
-              value = await (row!.onTap!(context, row) as FutureOr<String>);
+              value = await (row!.onTap!(context, row));
               break;
             default:
           }
