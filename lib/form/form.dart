@@ -34,8 +34,7 @@ class TForm extends StatefulWidget {
 
   /// 注意 of 方法获取的是 TFormState
   static TFormState? of(BuildContext context) {
-    final _TFormScope? scope =
-        context.dependOnInheritedWidgetOfExactType<_TFormScope>();
+    final _TFormScope? scope = context.dependOnInheritedWidgetOfExactType<_TFormScope>();
     return scope?.state;
   }
 
@@ -50,18 +49,17 @@ class TFormState extends State<TForm> {
 
   TFormState(this.rows);
 
-  /// 表单插入，可以是单个 row，也可以使一组 rows
+  /// 表单插入，可以是单个 row，也可以是一组 rows
   void insert(currentRow, item) {
     if (item is List<TFormRow>) {
-      rows!.insertAll(rows!.indexOf(currentRow) + 1,
-          item.map((e) => e..animation = true).toList());
+      rows!.insertAll(rows!.indexOf(currentRow) + 1, item.map((e) => e..animation = true).toList());
     } else if (item is TFormRow) {
       rows!.insert(rows!.indexOf(currentRow), item..animation = true);
     }
     reload();
   }
 
-  /// 表单删除，可以是单个 row，也可以使一组 rows
+  /// 表单删除，可以是单个 row，也可以是一组 rows
   void delete(item) {
     if (item is List<TFormRow>) {
       item.forEach((element) {
@@ -135,8 +133,7 @@ class TFormList extends StatelessWidget {
         break;
       case TFormListType.sliver:
         list = SliverList(
-            delegate:
-                SliverChildBuilderDelegate((BuildContext context, int index) {
+            delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
           return GestureDetector(
               behavior: HitTestBehavior.translucent,
               onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
