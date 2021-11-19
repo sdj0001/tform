@@ -90,7 +90,7 @@ class _TFormFieldState extends State<TFormField> {
       },
       onTap: () async {
         if (_isSelector) {
-          String value = "";
+          String value = '';
           switch (widget.row!.type) {
             case TFormRowTypeMultipleSelector:
             case TFormRowTypeSelector:
