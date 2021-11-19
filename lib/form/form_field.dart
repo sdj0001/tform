@@ -108,11 +108,11 @@ class _TFormFieldState extends State<TFormField> {
                     isMultipleSelector: row!.type == TFormRowTypeMultipleSelector,
                   ),
                 ),
-              ) as Future<String>);
+              ));
               break;
             case TFormRowTypeCustomSelector:
               if (row!.onTap == null) return;
-              value = await (row!.onTap!(context, row) as Future<String>);
+              value = await (row!.onTap!(context, row));
               break;
             default:
           }
